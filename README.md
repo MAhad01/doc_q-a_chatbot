@@ -1,12 +1,8 @@
-# Chatbot with Groq and LangChain
+# Document Q&A Chatbot using Llama 3, Groq API and LangChain
 
 ## 📌 Project Overview
 
-This project is a **Streamlit-based AI chatbot** that uses **Groq's LLM API** with **LangChain** for intelligent responses. It also integrates **FAISS** for retrieval-augmented generation (RAG), allowing efficient document searching and answering queries from embedded documents.
-
-## 🔍 How it Uses RAG (Retrieval-Augmented Generation)
-
-This chatbot uses **Retrieval-Augmented Generation (RAG)** to enhance the accuracy of responses by incorporating document-based information retrieval. The process follows these steps:
+This project is a **Streamlit-based AI chatbot** that uses **Groq's LLM API** with **LangChain** for intelligent responses. It implements **Retrieval-Augmented Generation (RAG)** via **FAISS** to enhance the accuracy of responses by incorporating document-based information retrieval. The process follows these steps:
 
 1. **Document Embedding:**
    - The chatbot loads PDF documents from the `us_census/` directory.
@@ -85,13 +81,13 @@ The chatbot will be accessible at `http://localhost:8501/`.
 ## 📸 Screenshots
 
 ### Chat Interface
-![Chat UI](screenshots\start.png)
+![Chat UI](screenshots/start.png)
 
 ### Response Example
-![Response Example](screenshots\result.png)
+![Response Example](screenshots/result.png)
 
 ### Response Time
-![Response Time](screenshots\time.png)
+![Response Time](screenshots/time.png)
 
 
 ## 🏗 Technologies Used
