@@ -6,7 +6,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
-from langchain_community.vectorstores import FAISS 
+# from langchain_community.vectorstores import FAISS 
+from langchain_objectbox.vectorstores import ObjectBox 
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 import time
 from dotenv import load_dotenv
@@ -36,17 +37,17 @@ def vector_embeddings():
         st.session_state.embeddings=OllamaEmbeddings()
         st.session_state.loader=PyPDFDirectoryLoader('./us_census')     #data ingestion
         st.session_state.docs=st.session_state.loader.load()            #document loading
-        st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)       #chunk creation
-        st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:20])     #splitting
-        st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents, st.session_state.embeddings)    #vector store creation
+        st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)       #chunk creation
+        st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:30])     #splitting
+        st.session_state.vectors=ObjectBox.from_documents(st.session_state.final_documents, st.session_state.embeddings, embedding_dimensions=786)    #vector store creation
     
     
 
 prompt1=st.text_input("Enter your question from documents")
 
-if st.button("Document Embedding"):
+if st.button("Start Document Embedding"):
     vector_embeddings()
-    st.write("Vector Store DB is ready")
+    st.write("ObjectBox DB is ready!")
     
 
 

@@ -6,3 +6,5 @@ faiss-cpu
 python-dotenv
 PyPDF2
 pypdf
+langchain-objectbox
+langchain
