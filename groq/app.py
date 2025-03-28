@@ -16,7 +16,7 @@ load_dotenv()
 #load Groq api key
 groq_api=os.getenv('GROQ_API_KEY')
 
-st.title("Chat GROQ With Llama 3 Demo")
+st.title("Document Q&A Chatbot")
 
 llm=ChatGroq(groq_api_key=groq_api,
              model_name='Llama3-8b-8192')
