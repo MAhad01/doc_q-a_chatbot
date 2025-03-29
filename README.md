@@ -75,13 +75,15 @@ The chatbot will be accessible at `http://localhost:8501/`.
 ## 📸 Screenshots
 
 ### Chat Interface
-![Chat UI](screenshots/start.png)
+![Chat UI](screenshots/start-1.png)
+![Chat UI](screenshots/start-2.png)
 
 ### Response Example
 ![Response Example](screenshots/result.png)
+![Document Serch](screenshots/docserch.png)
 
 ### Response Time
-![Response Time](screenshots/time.png)
+![Response Time](screenshots/response-time.png)
 
 
 
